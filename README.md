@@ -1,6 +1,7 @@
 DArk GAME:
 
 JAVASCRIPT:
+
 **The program starts with a some generalised definations:**
 
   We get canvas element from the HTML.
@@ -23,14 +24,20 @@ JAVASCRIPT:
 	we find center of room and set enemy little away from it.
 	saving this coordinates in our MAP array.
 
-**we have then defined a chkrect() function:**
+**we have then defined a chkrect() function: (Collision detection LOGIC part-1)**
 
   this function stands for checking rectangle.
-  it takes in a point of cordinates (fx,fy), rectangle(room) coordinates (rx,ry), and room door's dimensions (rw,rh).
+  it takes in a point of cordinates (fx,fy), rectangle(room) coordinates (rx,ry), and wall coordiantes(rw,rh).
   Using basic mathematics of distances and logical expression.
-    it return 1 if point inside room.
-    it return 0 if point outside room.
-  it returns 0 if we are on the door too.
+    it return 1 if point touches the wall of the room.
+    it return 0 if point if it does not touch the wall of the room.
+  it returns 0 if the point is on the door too.
 
-**After this function we defined another important function chkcoli() function:**
+**After this function we defined another important function chkcoli() function: (Collision detection LOGIC part-2)**
+
+  In the we just take the input coordinated fx,fy it can be of anything a bullet the player or anyone.
+	we start a loop through all rooms and check is we have encountered a wall or no depending on where the door is in the room and how we are around the room.
+	it returns true for point touching the room boundary.
+	if returns false for point if it is not encountered any wall.
+	This helps us verify if something has collided or no.
 
